@@ -45,7 +45,7 @@ export default function App() {
       estilo: {
         backgroundColor: '#9C27B0',
         width: 120,
-        height: 60,
+        height: 120,
         borderRadius: 10,
         margin: 5
       }
