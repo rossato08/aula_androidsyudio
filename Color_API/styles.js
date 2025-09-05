@@ -12,40 +12,29 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 20,
   },
-  colorGrid: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  inputContainer: {
     width: '100%',
     marginBottom: 20,
   },
-  colorColumn: {
-    flex: 1,
-    marginHorizontal: 10,
-  },
-  colorBox: {
-    alignItems: 'center',
-    marginVertical: 10,
-  },
-  colorPreview: {
-    width: 80,
-    height: 80,
-    borderRadius: 10,
+  hexInput: {
     borderWidth: 1,
     borderColor: '#ccc',
-    marginBottom: 8,
-  },
-  hexText: {
-    fontSize: 11,
-    color: '#555',
+    borderRadius: 8,
+    padding: 10,
+    fontSize: 16,
+    textAlign: 'center',
+    width: '80%',
+    alignSelf: 'center',
   },
   selectedColorBox: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
+    marginBottom: 10,
   },
   selectedColorSquare: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 10,
@@ -55,8 +44,27 @@ export default StyleSheet.create({
   },
   selectedColorText: {
     fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#000',
+  },
+  selectedColorHex: {
+    fontSize: 12,
     fontWeight: '500',
     textAlign: 'center',
+    color: '#000',
+    marginTop: 5,
+  },
+  colorNameContainer: {
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  selectedColorName: {
+    fontSize: 12,
+    fontWeight: '500',
+    textAlign: 'center',
+    color: '#000',
+    marginTop: 5,
   },
   clearButton: {
     backgroundColor: '#e02424',
@@ -66,5 +74,11 @@ export default StyleSheet.create({
   clearButtonText: {
     color: '#fff',
     fontWeight: 'bold',
+  },
+  errorText: {
+    fontSize: 12,
+    color: 'red',
+    textAlign: 'center',
+    marginBottom: 10,
   },
 });
