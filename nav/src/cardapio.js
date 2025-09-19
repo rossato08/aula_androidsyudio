@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView } from 'react-native';
 
 export default function Cardapio({ navigation }) {
 
@@ -21,24 +21,30 @@ export default function Cardapio({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.titulo}>🍔 Cardápio McDonald's 🍟</Text>
       
-      {hamburgers.map((hamburger, index) => (
-        <TouchableOpacity
-          key={index}
-          style={styles.botao}
-          onPress={() => navigation.navigate(hamburger.rota)}
-        >
-          <Image
-            source={hamburger.imagem}
-            style={styles.imagem}
-            resizeMode="contain"
-          />
-          <Text style={styles.textoBotao}>{hamburger.nome}</Text>
+      <ScrollView 
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={true}
+      >
+        {hamburgers.map((hamburger, index) => (
+          <TouchableOpacity
+            key={index}
+            style={styles.botao}
+            onPress={() => navigation.navigate(hamburger.rota)}
+          >
+            <Image
+              source={hamburger.imagem}
+              style={styles.imagem}
+              resizeMode="contain"
+            />
+            <Text style={styles.textoBotao}>{hamburger.nome}</Text>
+          </TouchableOpacity>
+        ))}
+        
+        <TouchableOpacity style={styles.botaoVoltar} onPress={voltar}>
+          <Text style={styles.textoBotaoVoltar}>Voltar para Tela Principal</Text>
         </TouchableOpacity>
-      ))}
-      
-      <TouchableOpacity style={styles.botaoVoltar} onPress={voltar}>
-        <Text style={styles.textoBotaoVoltar}>Voltar para Tela Principal</Text>
-      </TouchableOpacity>
+      </ScrollView>
 
       <StatusBar style="dark" />
     </View>
@@ -49,16 +55,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
   },
   titulo: {
     fontSize: 36,
     fontWeight: 'bold',
     color: '#FFC107', // Amarelo característico do McDonald's
+    marginTop: 60,
     marginBottom: 20,
     textAlign: 'center',
+    paddingHorizontal: 20,
+  },
+  scrollView: {
+    flex: 1,
+  },
+  scrollContent: {
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingBottom: 40,
   },
   botao: {
     flexDirection: 'row', // Alinha a imagem e o texto horizontalmente
@@ -67,7 +80,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 30,
     marginVertical: 10,
-    width: '80%',
+    width: '100%',
+    maxWidth: 350,
     alignItems: 'center',
     shadowColor: '#000',
     shadowOpacity: 0.3,

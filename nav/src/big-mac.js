@@ -20,7 +20,7 @@ export default function Tela3({ navigation }) {
       
       <TouchableOpacity
         style={sharedStyles.botaoVoltar}
-        onPress={() => navigation.navigate('cardapio')}
+        onPress={() => navigation.navigate('tela de menu')}
       >
         <Text style={sharedStyles.textoBotaoVoltar}>Voltar para o Cardápio</Text>
       </TouchableOpacity>

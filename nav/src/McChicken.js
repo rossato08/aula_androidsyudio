@@ -2,20 +2,20 @@ import { StatusBar } from 'expo-status-bar';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { sharedStyles } from '../styles';
 
-export default function CheddarMcMelt({ navigation }) {
+export default function McChicken({ navigation }) {
   return (
     <View style={sharedStyles.container}>
-      <Text style={sharedStyles.titulo}>Cheddar McMelt</Text>
+      <Text style={sharedStyles.titulo}>McChicken</Text>
       
       <Image
-        source={require('../assets/chedar.png')}
+        source={require('../assets/mcchicken.png')}
         style={sharedStyles.imagemDetalhe}
         resizeMode="contain"
       />
       
       <Text style={sharedStyles.descricao}>
-        O Cheddar McMelt é composto por um hambúrguer de carne 100% bovina, queijo cheddar derretido, 
-        cebola frita crocante e molho barbecue, servido no pão com gergelim.
+        O McChicken é feito com filé de frango empanado e crocante, alface americana fresca, 
+        maionese cremosa, tudo no delicioso pão com gergelim.
       </Text>
       
       <TouchableOpacity
